@@ -12,6 +12,7 @@ import {
   Loader2
 } from 'lucide-react';
 import { ScenarioDataset } from '../types/scenario';
+import unipdsLogo from '../assets/unipds-logo.png';
 
 interface SidebarProps {
   scenarios: ScenarioDataset[];
@@ -42,12 +43,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <aside className="w-80 bg-[#0f1422] border-r border-slate-800/80 flex flex-col h-screen select-none shrink-0 z-20">
       {/* Brand & Logo */}
-      <div className="p-5 border-b border-slate-800/80 flex items-center gap-3">
-        <div className="relative">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-[2px] shadow-lg shadow-indigo-500/20">
-            <div className="w-full h-full bg-[#0a0d14] rounded-[10px] flex items-center justify-center">
-              <Cpu className="w-5 h-5 text-cyan-400" />
-            </div>
+      <div className="p-4 border-b border-slate-800/80 flex items-center gap-3 bg-[#0a0d14]/70">
+        <div className="relative shrink-0">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500/30 via-slate-800 to-yellow-500/20 p-[1.5px] shadow-lg shadow-amber-500/10">
+            <img
+              src={unipdsLogo}
+              alt="UNIPDS Educação"
+              className="w-full h-full rounded-[10px] object-cover bg-black"
+            />
           </div>
           <span className="absolute -bottom-1 -right-1 flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -55,17 +58,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </span>
         </div>
 
-        <div>
-          <div className="flex items-center gap-2">
-            <h1 className="font-bold text-base tracking-tight text-white flex items-center gap-1.5">
-              <span>Tensor</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Float</span>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-1.5">
+            <h1 className="font-extrabold text-base tracking-tight text-white flex items-center gap-1 truncate">
+              <span className="text-white">UNIPDS</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-200">AI</span>
             </h1>
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-semibold border border-indigo-500/30">
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-300 font-semibold border border-amber-500/30 shrink-0">
               TF.JS
             </span>
           </div>
-          <p className="text-xs text-slate-400">Client-Side AI Dashboard</p>
+          <p className="text-xs text-slate-400 truncate">TensorFloat Dashboard</p>
         </div>
       </div>
 

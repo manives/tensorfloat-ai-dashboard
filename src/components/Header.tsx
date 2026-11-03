@@ -1,6 +1,7 @@
 import React from 'react';
 import { Database, Play, RotateCcw, Cpu, Sparkles, CheckCircle2 } from 'lucide-react';
 import { ScenarioDataset, TrainingMetrics } from '../types/scenario';
+import unipdsLogo from '../assets/unipds-logo.png';
 
 interface HeaderProps {
   scenario: ScenarioDataset;
@@ -24,6 +25,13 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Left: Title & Metadata */}
         <div>
           <div className="flex items-center gap-2.5 flex-wrap">
+            <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-black border border-amber-500/30 shadow-sm shadow-amber-500/10">
+              <img src={unipdsLogo} alt="UNIPDS Educação" className="w-4 h-4 rounded object-cover" />
+              <span className="text-[11px] font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-100">
+                UNIPDS EDUCAÇÃO
+              </span>
+            </div>
+
             <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 flex items-center gap-1.5 font-medium">
               <Cpu className="w-3.5 h-3.5" />
               {scenario.badge}
